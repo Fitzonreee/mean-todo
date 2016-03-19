@@ -10,5 +10,3 @@ app.listen(3000, function() {
 })
 
 // nodemon src/app.js
-
-// NEED to do Angular ToDo List and clone repo
