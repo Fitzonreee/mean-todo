@@ -8,7 +8,7 @@ angular.module("todoListApp")
   };
 
   this.getTodos = function(callback) {
-    $http.get('mock/todos.json')
+    $http.get('api/todos')
       .then(callback)
   }
 

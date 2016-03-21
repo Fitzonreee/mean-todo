@@ -5,7 +5,7 @@ var router = require('./api');
 
 var app = express();
 
-app.use('/', express.static('public'));
+app.use('/', express.static('client'));
 
 app.use('/api', router);
 

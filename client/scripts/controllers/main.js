@@ -13,7 +13,7 @@ angular.module("todoListApp")
 
   dataService.getTodos(function(response) {
     // console.log(response.data);
-    $scope.todos = response.data;
+    $scope.todos = response.data.todos;
   });
 
   $scope.deleteTodo = function(todo, $index) {
