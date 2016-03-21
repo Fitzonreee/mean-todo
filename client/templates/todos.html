@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <!-- <h1 class="text-center">To Do List</h1> -->
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="add">
+        <a href="" ng-click="addTodo();"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a New Task</a>
+      </div>
+      <div ng-init="todo.completed = false" ng-repeat="todo in todos | orderBy: 'completed'" class="row-wrapper" ng-class="{'editing-item': editing, 'edited': todo.edited, 'completed': todo.completed}">
+        <div class="list">
+          <input ng-model="todo.completed" type="checkbox">
+
+          <!-- this is for custom checkboxes -->
+          <!-- <span ng-click="todo.completed = !todo.completed; todo.edited = true"></span> -->
+
+          <label ng-click="editing = true" ng-hide="editing" class="editing-label">{{todo.name}}</label>
+          <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" class="editing-label" type="text">
+        </div>
+        <div class="actions pull-right">
+          <!-- <a class="btn btn-xs btn-default" href="" ng-click="editing = !editing">Edit</a> -->
+          <a class="btn btn-xs btn-default" href="" ng-click="saveTodos(todo);"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span></a>
+          <a class="btn btn-xs btn-default" href="" ng-click="deleteTodo(todo, $index)" class="delete"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

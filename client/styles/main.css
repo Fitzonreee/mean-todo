@@ -1,0 +1,103 @@
+/*************************
+		Todo
+
+    1. Add custom checkboxes
+    2. Add new task functionality
+
+*************************/
+
+
+/*************************
+		Global
+*************************/
+* {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 100 !important;
+}
+
+h1, .container {
+  padding: 80px 0;
+}
+
+body {
+  background-color: rgba(232, 210, 174, 0.25);
+}
+
+/*************************
+    ADD
+*************************/
+.add > a {
+  color: #545454;
+  background-color: rgba(131, 191, 101, 0.55);
+  padding: 10px;
+  display: block;
+}
+
+.add > a:hover {
+  text-decoration: none;
+  background-color: rgba(131, 191, 101, 1);
+
+}
+/*************************
+    List
+*************************/
+.row-wrapper {
+  background-color: rgba(193, 190, 166, 0.45);
+  padding: 18px;
+  margin: 6px 0;
+  border-left: 6px solid rgba(131, 191, 101, 0.55);
+}
+
+.list, .actions {
+  display: inline-block;
+}
+
+label {
+  margin-left: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*************************
+  Items
+*************************/
+
+/* Add custom checkboxes */
+input[type="text"] {
+  padding: 10px;
+}
+
+/* Class dynamically added on click */
+.editing-item {
+  background-color: rgba(242, 205, 84, 0.45);
+}
+
+.edited .list label::after {
+  content: " edited";
+  text-transform: uppercase;
+  padding-left: 5px;
+  color: rgb(107, 107, 107);
+  opacity: 0.7;
+  /*border-left: 6px solid rgb(242, 205, 84); Add to row-wrapper*/
+}
+
+.completed {
+  text-decoration: line-through !important; /* not working */
+  background-color: rgba(193, 190, 166, 0.15);
+  opacity: 0.35;
+}
+
+.completed .btn {
+  display: none;
+}
+
+/*************************
+    Button Overrides - change hover states
+*************************/
+.btn {
+  background-color: rgba(193, 190, 166, 1);
+}
+
+.btn span {
+  padding: 4px 2px;
+}
