@@ -32,4 +32,6 @@ angular.module("todoListApp")
     dataService.saveTodos(filteredTodos);
   };
 
-})
+});
+
+module.exports = todoListApp;

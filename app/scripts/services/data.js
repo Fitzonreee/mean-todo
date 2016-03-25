@@ -1,5 +1,7 @@
 'use strict'
 
+var angular = require('angular');
+
 angular.module("todoListApp")
 
 .service('dataService', function($http) {
@@ -20,3 +22,6 @@ angular.module("todoListApp")
     console.log(todos.length + " todos saved!");
   }
 });
+
+
+module.exports = dataService;
