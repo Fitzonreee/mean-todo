@@ -50,12 +50,17 @@ webpackJsonp([0],[
 	        return todo;
 	      };
 	    });
-	    dataService.saveTodos(filteredTodos);
+	    dataService.saveTodos(filteredTodos)
+	    .finally($scope.resetTodoState());
+	  };
+
+	  $scope.resetTodoState = function() {
+	    $scope.todos.forEach(function(todo) {
+	      todo.edited = false;
+	    });
 	  };
 
 	});
-
-	// module.exports = mainCtrl;
 
 
 /***/ },
@@ -75,8 +80,6 @@ webpackJsonp([0],[
 	    }
 	  })
 
-	// module.exports = todos;
-
 
 /***/ },
 /* 5 */
@@ -88,7 +91,7 @@ webpackJsonp([0],[
 
 	angular.module("todoListApp")
 
-	.service('dataService', function($http) {
+	.service('dataService', function($http, $q) {
 	  this.helloConsole = function() {
 	    console.log("This is the hello console service!");
 	  };
@@ -103,12 +106,25 @@ webpackJsonp([0],[
 	  }
 
 	  this.saveTodos = function(todos) {
-	    console.log(todos.length + " todos saved!");
-	  }
+	    // console.log(todos.length + " todos saved!");
+	    var queue = [];
+	    todos.forEach(function(todo) {
+	      var request;
+	      if (!todo._id) {
+	        request = $http.post('/api/todos', todo)
+	      } else {
+	        request = $http.put('/api/todos/' + todo._id, todo).then(function(result) {
+	          todo = result.data.todo;
+	          return todo;
+	        });
+	      };
+	      queue.push(request);
+	    });
+	    return $q.all(queue).then(function(results) {
+	      console.log("I saved " + todos.length + " todos!");
+	    });
+	  };
 	});
-
-
-	// module.exports = dataService;
 
 
 /***/ }
