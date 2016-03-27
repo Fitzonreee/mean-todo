@@ -9,8 +9,8 @@ webpackJsonp([0],[
 	angular.module("todoListApp", []);
 
 	__webpack_require__(3);
-	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./scripts/directives/todoListApp.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	__webpack_require__(4);
+	__webpack_require__(5);
 
 
 /***/ },
@@ -55,11 +55,31 @@ webpackJsonp([0],[
 
 	});
 
-	module.exports = todoListApp;
+	// module.exports = mainCtrl;
 
 
 /***/ },
 /* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var angular = __webpack_require__(1);
+
+	angular.module('todoListApp')
+	  .directive('todos', function() {
+	    return {
+	      templateUrl: 'templates/todos.html',
+	      controller: 'mainCtrl',
+	      replace: true
+	    }
+	  })
+
+	// module.exports = todos;
+
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
@@ -88,7 +108,7 @@ webpackJsonp([0],[
 	});
 
 
-	module.exports = dataService;
+	// module.exports = dataService;
 
 
 /***/ }

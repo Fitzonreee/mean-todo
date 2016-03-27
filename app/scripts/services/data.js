@@ -22,6 +22,3 @@ angular.module("todoListApp")
     console.log(todos.length + " todos saved!");
   }
 });
-
-
-module.exports = dataService;

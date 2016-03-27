@@ -33,5 +33,3 @@ angular.module("todoListApp")
   };
 
 });
-
-module.exports = todoListApp;
