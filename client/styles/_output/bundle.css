@@ -1,15 +1,22 @@
-/*************************
-		Todo
-
-    1. Add custom checkboxes
-    2. Add new task functionality
-
-*************************/
-
+.testing {
+  width: 57.14286%;
+  background-color: white;
+  border: 5px solid #626262;
+  color: #e7ad61;
+}
 
 /*************************
-		Global
-*************************/
+ 		Todo
+
+     1. Add custom checkboxes
+     2. Add new task functionality
+
+ *************************/
+
+/*************************
+ 		Global
+ *************************/
+
 * {
   font-family: 'Oxygen', sans-serif;
   font-weight: 100 !important;
@@ -24,8 +31,9 @@ body {
 }
 
 /*************************
-    ADD
-*************************/
+     ADD
+ *************************/
+
 .add > a {
   color: #545454;
   background-color: rgba(131, 191, 101, 0.55);
@@ -35,12 +43,13 @@ body {
 
 .add > a:hover {
   text-decoration: none;
-  background-color: rgba(131, 191, 101, 1);
-
+  background-color: #83bf65;
 }
+
 /*************************
-    List
-*************************/
+     List
+ *************************/
+
 .row-wrapper {
   background-color: rgba(193, 190, 166, 0.45);
   padding: 18px;
@@ -48,7 +57,8 @@ body {
   border-left: 6px solid rgba(131, 191, 101, 0.55);
 }
 
-.list, .actions {
+.list,
+.actions {
   display: inline-block;
 }
 
@@ -59,15 +69,17 @@ label {
 }
 
 /*************************
-  Items
-*************************/
+   Items
+ *************************/
 
 /* Add custom checkboxes */
+
 input[type="text"] {
   padding: 10px;
 }
 
 /* Class dynamically added on click */
+
 .editing-item {
   background-color: rgba(242, 205, 84, 0.45);
 }
@@ -76,13 +88,14 @@ input[type="text"] {
   content: " edited";
   text-transform: uppercase;
   padding-left: 5px;
-  color: rgb(107, 107, 107);
+  color: #6b6b6b;
   opacity: 0.7;
   /*border-left: 6px solid rgb(242, 205, 84); Add to row-wrapper*/
 }
 
 .completed {
-  text-decoration: line-through !important; /* not working */
+  text-decoration: line-through !important;
+  /* not working */
   background-color: rgba(193, 190, 166, 0.15);
   opacity: 0.35;
 }
@@ -92,10 +105,11 @@ input[type="text"] {
 }
 
 /*************************
-    Button Overrides - change hover states
-*************************/
+     Button Overrides - change hover states
+ *************************/
+
 .btn {
-  background-color: rgba(193, 190, 166, 1);
+  background-color: #c1bea6;
 }
 
 .actions > .btn > span {
