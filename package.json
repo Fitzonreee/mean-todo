@@ -13,5 +13,9 @@
     "angular": "^1.5.2",
     "body-parser": "1.15.0",
     "mongoose": "4.4.9"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
   }
 }
