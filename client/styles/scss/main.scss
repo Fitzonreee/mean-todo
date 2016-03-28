@@ -1,6 +1,8 @@
-// SCSS styles
+@import "vars";
 
 .testing {
-  width: percentage(4/7);
-  background-color: lighten(white, 10%);
-}
+  width: 57.14286%;
+  background-color: white;
+  border: 5px solid $black;
+  color: $orange;
+ }

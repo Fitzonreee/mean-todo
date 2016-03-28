@@ -1,3 +1,5 @@
 .testing {
   width: 57.14286%;
-  background-color: white; }
+  background-color: white;
+  border: 5px solid #626262;
+  color: #e7ad61; }
