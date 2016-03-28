@@ -44,5 +44,20 @@ router.put('/todos/:id', function(req, res) {
 });
 
 // TODO: Add DELETE route to delete entries
+// No idea if this is working!!!
+router.get('/todos/:id', function(req, res) {
+  var id = req.params.id;
+  var todo = req.body;
+  if (todo && todo._id !== id) {
+    return res.status(500).json({err: "Ids don't match!"});
+  }
+  Todo.destroy(id, todo, function(err, todo) {
+    if (err) {
+      return res.status(500).json({err: err.message});
+    }
+    res.json({'todo': todo, message: 'Todo deleted.'});
+  });
+});
+
 
 module.exports = router;
