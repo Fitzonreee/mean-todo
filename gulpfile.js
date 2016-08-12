@@ -24,3 +24,6 @@ gulp.task('build', function () {
 // gulp sass
 // gulp watch
 // gulp build
+
+// sudo mongod
+// nodemon - listening on port 300
